@@ -638,7 +638,7 @@ async def ticket_setup(interaction: discord.Interaction, category: discord.Categ
         description="Need assistance? Click the green button below to open a private support ticket window with our server staff team.",
         color=discord.Color.green()
     )
-    embed.set_footer(text="Wither Cloud Ticket System")
+    embed.set_footer(text="Ticket System")
     
     view = TicketControls()
     await interaction.response.send_message(
