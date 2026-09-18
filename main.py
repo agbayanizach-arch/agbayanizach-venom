@@ -28,6 +28,22 @@ def keep_alive():
 
 keep_alive()
 
+# --- DISCORD BOT CORE ---
+# Prefix commands use `-` and message-content intent is enabled so Discord
+# can deliver prefix messages to the bot. Member/guild intents are also
+# enabled because this bot uses joins, invites, roles, moderation, and DMs.
+intents = discord.Intents.all()
+intents.message_content = True
+intents.members = True
+intents.guilds = True
+
+bot = commands.Bot(
+    command_prefix="-",
+    intents=intents,
+    case_insensitive=True,
+    help_command=None
+)
+
 # Stores the configured ticket category for each server.
 TICKET_FILE = "ticket_categories.json"
 ticket_categories = {}
